@@ -1,0 +1,67 @@
+SELECT
+	job_id,	
+	job_title_short,
+	job_location,
+	job_via,
+	salary_year_avg
+FROM
+	job_postings_fact
+WHERE
+	job_location = 'Tampa, FL'
+ORDER BY
+	job_id;
+
+SELECT
+	job_id,
+	job_title_short,
+	job_location,
+	job_via,
+	salary_year_avg,
+	job_schedule_type
+FROM
+	job_postings_fact
+WHERE
+	job_schedule_type <> 'Part-time'
+ORDER BY
+	job_id;
+
+SELECT
+	job_id,
+	job_title_short,
+	job_location,
+	job_via,
+	salary_year_avg
+FROM
+	job_postings_fact
+WHERE
+	salary_year_avg < 110000
+ORDER BY
+	job_id;
+
+SELECT
+	job_id,
+	job_title_short,
+	job_country,
+	job_via,
+	salary_year_avg
+FROM
+	job_postings_fact
+WHERE
+	job_title_short = 'Data Engineer'
+	AND job_country = 'United States'
+ORDER BY
+	job_id;
+
+SELECT
+	job_id,
+	job_title_short,
+	job_location,
+	salary_year_avg
+FROM
+	job_postings_fact
+WHERE
+	job_title_short = 'Data Analyst'
+	AND salary_year_avg BETWEEN 50000 AND 75000
+ORDER BY
+	job_id;
+
